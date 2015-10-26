@@ -19,7 +19,7 @@ class webadmin($webadminuser = "webadmin", $webadmingroup = "webadmin") inherits
 
   file { "$webadmin::params::vimrc_path":
     ensure => present,
-    mode => 644,
+    mode => '0644',
     source => "puppet:///modules/webadmin/${webadmin::params::vimrc}",
   }
 
@@ -27,7 +27,7 @@ class webadmin($webadminuser = "webadmin", $webadmingroup = "webadmin") inherits
     ensure => present,
     owner => root,
     group => root,
-    mode => 644,
+    mode => '0644',
     source => "puppet:///modules/webadmin/bash.bashrc",
   }
 
@@ -35,7 +35,7 @@ class webadmin($webadminuser = "webadmin", $webadmingroup = "webadmin") inherits
     ensure => present,
     owner => root,
     group => root,
-    mode => 644,
+    mode => '0644',
     source => "puppet:///modules/webadmin/inputrc",
   }
 
@@ -43,7 +43,7 @@ class webadmin($webadminuser = "webadmin", $webadmingroup = "webadmin") inherits
     ensure => present,
     owner => root,
     group => root,
-    mode => 644,
+    mode => '0644',
     source => "puppet:///modules/webadmin/gitconfig"
   }
 
@@ -51,14 +51,14 @@ class webadmin($webadminuser = "webadmin", $webadmingroup = "webadmin") inherits
     source => "puppet:///modules/webadmin/git_ignore",
     owner => root,
     group => root,
-    mode => 655,
+    mode => '0655',
   }
 
   file { '/usr/share/git-core/templates/info/attribute':
     source => "puppet:///modules/webadmin/git_attribute",
     owner => root,
     group => root,
-    mode => 655,
+    mode => '0655',
   }
 
   # TODO: Fixme for CentOS
@@ -66,20 +66,20 @@ class webadmin($webadminuser = "webadmin", $webadmingroup = "webadmin") inherits
     source => "puppet:///modules/webadmin/runtags",
     owner => 'root',
     group => 'root',
-    mode => 755,
+    mode => '0755',
   }
 
   file { '/usr/local/bin/network-restart':
     source => "puppet:///modules/webadmin/network-restart",
     owner => 'root',
     group => 'root',
-    mode => 755,
+    mode => '0755',
   }
 
   file { '/usr/local/bin/make-random-password':
     source => "puppet:///modules/webadmin/make-random-password",
     owner => 'root',
     group => 'root',
-    mode => 755,
+    mode => '0755',
   }
 }
